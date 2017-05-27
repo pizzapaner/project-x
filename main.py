@@ -16,10 +16,6 @@ num_to_card = {
     13: 'K'
 }
 
-card_to_num = {
-
-}
-
 def generate_card():
     num = random.randint(1, 13)
     for index in card_history:
@@ -29,9 +25,21 @@ def generate_card():
         return generate_card()
     return num
 
+card_to_num = {
+    'A': 11, '2': 2, '3': 3, '4': 4,
+    '5': 5, '6': 6, '7': 7, '8': 8,
+    '9': 9, '10': 10, 'J': 10, 'Q': 10,
+    'K': 10
+}
+
 # Turn 1
 player_hand.append(generate_card())
 dealer_hand.append(generate_card())
+
+def card_name():
+
+
+
 
 print(player_hand[0])
 print(dealer_hand)
