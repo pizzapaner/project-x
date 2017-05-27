@@ -48,3 +48,5 @@ b = False
 c = a and b or a
 
 print(c)
+
+print(input('type your input here:'))
