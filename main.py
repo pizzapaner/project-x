@@ -16,6 +16,14 @@ num_to_card = {
     13: 'K'
 }
 
+card_to_num = {
+    'A': 11, '2': 2, '3': 3, '4': 4,
+    '5': 5, '6': 6, '7': 7, '8': 8,
+    '9': 9, '10': 10, 'J': 10, 'Q': 10,
+    'K': 10
+}
+
+
 def generate_card():
     num = random.randint(1, 13)
     for index in card_history:
@@ -25,20 +33,25 @@ def generate_card():
         return generate_card()
     return num
 
-card_to_num = {
-    'A': 11, '2': 2, '3': 3, '4': 4,
-    '5': 5, '6': 6, '7': 7, '8': 8,
-    '9': 9, '10': 10, 'J': 10, 'Q': 10,
-    'K': 10
-}
+
+def render(hand):
+    hand_render = []
+    for card in hand:
+        hand_render.append(num_to_card[card])
+    return hand_render
+
+
+def is_bust(hand):
+    hand_sum = sum(hand)
+    if hand_sum > 21:
+        return True
+    return False
+
+a = render(player_hand)
 
 # Turn 1
 player_hand.append(generate_card())
 dealer_hand.append(generate_card())
-
-def card_name():
-
-
 
 
 print(player_hand[0])
@@ -51,4 +64,3 @@ print(dealer_hand)
 #     print(card)
 #     print('played cards: ' + str(len(played_cards)))
 # print(card_history)
-
